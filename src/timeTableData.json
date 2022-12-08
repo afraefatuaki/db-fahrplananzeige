@@ -4,7 +4,7 @@
       "from": "Frankfurt(Main)Hbf",
       "to": "Berlin Hbf",
       "starttime": "09:40",
-      "endtime": "11:20"
+      "endtime": "13:20"
     },
     {
       "from": "Frankfurt(Main)Hbf",
@@ -25,8 +25,38 @@
       "endtime": "14:20"
     },
     {
+      "from": "Munich Hbf",
+      "to": "Frankfurt(Main)Hbf",
+      "starttime": "09:40",
+      "endtime": "16:20"
+    },
+    {
+      "from": "Cologne Hbf",
+      "to": "Frankfurt(Main)Hbf",
+      "starttime": "09:40",
+      "endtime": "11:20"
+    },
+    {
+      "from": "Hamburg Hbf",
+      "to": "Frankfurt(Main)Hbf",
+      "starttime": "09:40",
+      "endtime": "12:20"
+    },
+    {
       "from": "Frankfurt(Main)Hbf",
-      "to": "Dresden Hbf",
+      "to": "Frankfurt(Main)Hbf",
+      "starttime": "09:40",
+      "endtime": "13:40"
+    },
+    {
+      "from": "Frankfurt(Main)Hbf",
+      "to": "Frankfurt(Main)Hbf",
+      "starttime": "09:40",
+      "endtime": "14:20"
+    },
+    {
+      "from": "Frankfurt(Main)Hbf",
+      "to": "Frankfurt(Main)Hbf",
       "starttime": "09:40",
       "endtime": "11:20"
     }
