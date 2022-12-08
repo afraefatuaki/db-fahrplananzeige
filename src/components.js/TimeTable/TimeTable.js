@@ -11,12 +11,11 @@ export default function TimeTable() {
         return parseInt(timeArray[0], 10) * 60 + parseInt(timeArray[1], 10);
     }
 
-    // console.log(startTime)
 
     function convertNumberToTime(number) {
         var hours = Math.floor(number / 60);
         var minutes = number % 60;
-        return hours + ':' + minutes;
+        return hours + 'h ' + minutes + "min";
     }
     console.log('data', data.fahrplananzeige)
     return (
@@ -30,12 +29,11 @@ export default function TimeTable() {
                     let durationInTime = convertNumberToTime(durationInNumber)
                     console.log("duration in number ", durationInNumber)
                     console.log("duration in time ", durationInTime)
-                    console.log(convertTimeToNumber(endTime) - convertTimeToNumber(startTime))
                     return (
                         <div>
                             <div className='flex-container'>
                                 <p key={uuidv4()}>{data.from}</p>
-                                <div>lasting time</div>
+                                <div>{durationInTime}</div>
                                 <p key={uuidv4()}>{data.to}</p>
                             </div>
                             <div className='flex-container'>
