@@ -1,9 +1,7 @@
 import './style.css';
 import { v4 as uuidv4 } from 'uuid';
 
-
 export default function TimeTable(props) {
-
 
     function convertTimeToNumber(time) {
         var timeArray = time.split(':');
@@ -16,72 +14,35 @@ export default function TimeTable(props) {
         return hours + 'h ' + minutes + "min";
     }
 
-    // console.log('data timetable', props.timeTableData)
     return (
         <div>
             {
+                props.data.map((data) => {
+                    let startTime = data.starttime
+                    let endTime = data.endtime
 
+                    let durationInNumber = convertTimeToNumber(endTime) - convertTimeToNumber(startTime)
+                    let durationInTime = convertNumberToTime(durationInNumber)
 
-                props.fromFrank ?
-                    props.fromFrankfurt.map((data) => {
-                        let startTime = data.starttime
-                        let endTime = data.endtime
-
-                        let durationInNumber = convertTimeToNumber(endTime) - convertTimeToNumber(startTime)
-                        let durationInTime = convertNumberToTime(durationInNumber)
-                        // console.log("duration in number ", durationInNumber)
-                        // console.log("duration in time ", durationInTime)
-                        return (
-                            <div>
-                                <div className='flex-container'>
-                                    <p key={uuidv4()}>{data.from}</p>
-                                    <div>{durationInTime}</div>
-                                    <p key={uuidv4()}>{data.to}</p>
-                                </div>
-                                <div className='flex-container'>
-                                    <div className='circle'></div>
-                                    <div className='line'></div>
-                                    <div className='circle'></div>
-                                </div>
-                                <div className='flex-container'>
-                                    <p key={uuidv4()}>{data.starttime}</p>
-                                    <p key={uuidv4()}>{data.endtime}</p>
-                                </div>
+                    return (
+                        <div key={uuidv4()}>
+                            <div className='flex-container'>
+                                <p className='destination'>{data.from}</p>
+                                <p className='duration destination'>{durationInTime}</p>
+                                <p className='destination'>{data.to}</p>
                             </div>
-                        )
-                    })
-                    :
-
-                    props.toFrankfurt.map((data) => {
-                        let startTime = data.starttime
-                        let endTime = data.endtime
-
-                        let durationInNumber = convertTimeToNumber(endTime) - convertTimeToNumber(startTime)
-                        let durationInTime = convertNumberToTime(durationInNumber)
-
-                        return (
-                            <div>
-                                <div className='flex-container'>
-                                    <p key={uuidv4()}>{data.from}</p>
-                                    <div>{durationInTime}</div>
-                                    <p key={uuidv4()}>{data.to}</p>
-                                </div>
-                                <div className='flex-container'>
-                                    <div className='circle LeftCircle'></div>
-                                    <div className='line'></div>
-                                    <div className='circle rightCircle'></div>
-                                </div>
-                                <div className='flex-container'>
-                                    <p key={uuidv4()}>{data.starttime}</p>
-                                    <p key={uuidv4()}>{data.endtime}</p>
-                                </div>
+                            <div className='flex-container'>
+                                <div className='circle LeftCircle'></div>
+                                <div className='line'></div>
+                                <div className='circle rightCircle'></div>
                             </div>
-                        )
-                    })
-
-
-
-
+                            <div className='flex-container'>
+                                <p className='time'>{data.starttime} Uhr</p>
+                                <p className='time'>{data.endtime} Uhr</p>
+                            </div>
+                        </div>
+                    )
+                })
             }
         </div>
     )

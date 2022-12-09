@@ -1,7 +1,36 @@
 .flex-container {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     position: relative;
+}
+
+.destination {
+    width: 33%;
+    font-family: 'DBFontBold', sans-serif;
+    font-weight: bold;
+}
+
+p.destination:first-child {
+    text-align: left;
+}
+
+p.destination:last-child {
+    text-align: right;
+}
+
+.duration {
+    margin: 5px;
+    align-self: flex-end;
+    font-family: 'DBFontRegular', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.time {
+    font-family: 'DBFontMedium', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
 }
 
 .circle {

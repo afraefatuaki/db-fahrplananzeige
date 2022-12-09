@@ -1,10 +1,11 @@
 import './style.css';
 import { useState, useEffect } from 'react';
 import TimeTable from '../TimeTable/TimeTable';
+import data from '../../timeTableData.json'
 
 export default function FrankfurtFilter(props) {
 
-    let timeTableData = props.timeTableData
+    let timeTableData = data.fahrplananzeige
 
     const [fromFrank, setFromFrank] = useState(true)
     const [from, setFrom] = useState([])
@@ -23,6 +24,11 @@ export default function FrankfurtFilter(props) {
         setFromFrank(false)
         setTo(toFilter)
     }
+
+    useEffect(() => {
+        toFrankfurt()
+    }, [])
+
     return (
         <div className='frankfurtFilterContainer'>
             <div className='titleContainer'>
@@ -32,23 +38,21 @@ export default function FrankfurtFilter(props) {
             <div className='btnsContainer'>
                 <button
                     onClick={() => fromFrankfurt()}
-                    className='btn rightMargin'
+                    className={`${fromFrank ? 'clickedBtn rightMargin' : 'btn rightMargin'}`}
                 >
                     von Frankfurt
                 </button>
                 <button
                     onClick={() => toFrankfurt()}
-                    className='btn'
+                    className={`${!fromFrank ? 'clickedBtn rightMargin' : 'btn rightMargin'}`}
                 >
                     nach Frankfurt
                 </button>
             </div>
             <TimeTable
-                fromFrankfurt={from}
-                toFrankfurt={to}
+                data={fromFrank ? from : to}
                 fromFrank={fromFrank}
             />
-
         </div>
     )
 }

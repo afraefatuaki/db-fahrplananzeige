@@ -44,18 +44,18 @@
     },
     {
       "from": "Frankfurt(Main)Hbf",
-      "to": "Frankfurt(Main)Hbf",
+      "to": "Leipzig Hbf",
       "starttime": "09:40",
-      "endtime": "13:40"
+      "endtime": "12:40"
     },
     {
-      "from": "Frankfurt(Main)Hbf",
+      "from": "Bonn Hbf",
       "to": "Frankfurt(Main)Hbf",
       "starttime": "09:40",
       "endtime": "14:20"
     },
     {
-      "from": "Frankfurt(Main)Hbf",
+      "from": "Aachen Hbf",
       "to": "Frankfurt(Main)Hbf",
       "starttime": "09:40",
       "endtime": "11:20"
